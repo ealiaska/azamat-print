@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Azamat Print</title>
+  <meta name="description" content="Azamat Print полиграфиялық орталығының қызметтері, прайс-парағы, пікірлері және байланыс деректері.">
+  <link rel="stylesheet" href="styles.css?v=20260614-4">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="#home" aria-label="Azamat Print басты беті">
+      <img src="assets/azamat-logo.png" alt="Azamat Print логотипі">
+      <span>Azamat Print</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Мәзір</button>
+    <nav class="site-nav" id="site-nav" aria-label="Негізгі мәзір">
+      <a href="#home" data-public-link>Басты бет</a>
+      <a href="#services">Қызметтер</a>
+      <a href="#prices">Прайс-парақ</a>
+      <a href="#reviews">Пікірлер</a>
+      <a href="#contacts">Байланыс</a>
+      <a href="#login">Қызметкерге кіру</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-band reveal public-section" id="home">
+      <div class="hero-inner">
+        <div class="hero-logo-wrap" aria-hidden="true">
+          <img src="assets/azamat-logo.png" alt="">
+        </div>
+        <p class="eyebrow">Полиграфиялық орталық</p>
+        <h1>Azamat Print</h1>
+        <p class="hero-copy">Azamat Print — сапалы баспа, жарқын дизайн және заманауи полиграфиялық қызметтер орталығы. Біз әрбір жұмысты ұқыптылықпен, жауапкершілікпен және шығармашылық көзқараспен орындаймыз.</p>
+        <div class="hero-actions" aria-label="Негізгі бөлімдер">
+          <a class="btn primary" href="#services">Қызметтер</a>
+          <a class="btn" href="#prices">Прайс-парақ</a>
+          <a class="btn" href="#reviews">Пікірлер</a>
+          <a class="btn" href="#contacts">Байланыс</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal public-section" id="services">
+      <div class="section-heading">
+        <p class="eyebrow">Қызметтер</p>
+        <h2>Қажетті қызметті ашып көріңіз</h2>
+        <p>Әр санат қысқаша сипаттамамен берілген. Онлайн тапсырыс жоқ, байланысу үшін WhatsApp, Instagram, Telegram немесе телефон қолданылады.</p>
+      </div>
+      <div class="accordion" id="serviceAccordion"></div>
+    </section>
+
+    <section class="section reveal page-screen hidden" id="prices">
+      <div class="screen-top">
+        <a class="btn small" href="#home">← Басты бетке қайту</a>
+      </div>
+      <div class="section-heading">
+        <p class="eyebrow">Жеке терезе</p>
+        <h2>Прайс-парақ</h2>
+        <p>Бұл бөлім жеке экран ретінде ашылады. Бағалар сайтқа тіркелген сыртқы CSV кестесінен алынады: формат, материал, тығыздық және түс түрі бөлек жолдармен көрсетіледі.</p>
+      </div>
+
+      <div class="price-tools">
+        <label>
+          <span>Іздеу</span>
+          <input type="search" id="searchInput" placeholder="А4, 160 г/м², визитка...">
+        </label>
+        <label>
+          <span>Санат</span>
+          <select id="categoryFilter"></select>
+        </label>
+        <label>
+          <span>Материал / түрі</span>
+          <select id="materialFilter"></select>
+        </label>
+        <label>
+          <span>Сұрыптау</span>
+          <select id="sortSelect">
+            <option value="default">Әдепкі рет</option>
+            <option value="priceAsc">Баға: төменнен жоғары</option>
+            <option value="priceDesc">Баға: жоғарыдан төмен</option>
+            <option value="popular">Танымал қызметтер</option>
+          </select>
+        </label>
+      </div>
+
+      <p class="table-source" id="priceSourceNote">Прайс базасы жүктелуде...</p>
+      <div class="price-grid" id="priceGrid"></div>
+    </section>
+
+    <section class="section-band reveal public-section" id="reviews">
+      <div class="section-heading">
+        <p class="eyebrow">Пікірлер</p>
+        <h2>Клиенттер пікірі</h2>
+          <p>Пікір қалдыру үшін тіркелу қажет емес. Бұл статикалық нұсқада жаңа пікір осы браузерде сақталады; барлық құрылғыда көрінуі үшін ортақ серверлік база қажет.</p>
+      </div>
+      <div class="reviews-layout">
+        <div class="reviews-grid" id="reviewsGrid"></div>
+        <form class="review-form" id="reviewForm">
+          <h3>Пікір қалдыру</h3>
+          <label>
+            <span>Аты-жөні</span>
+            <input name="name" required placeholder="Мысалы: Айдана С.">
+          </label>
+          <label>
+            <span>Бағалау</span>
+            <select name="rating" required>
+              <option value="5">5 - Өте жақсы</option>
+              <option value="4">4 - Жақсы</option>
+              <option value="3">3 - Орташа</option>
+              <option value="2">2 - Төмен</option>
+              <option value="1">1 - Нашар</option>
+            </select>
+          </label>
+          <label>
+            <span>Пікір мәтіні</span>
+            <textarea name="text" rows="5" required placeholder="Қызмет туралы ойыңызды жазыңыз"></textarea>
+          </label>
+          <button class="btn primary" type="submit">Жіберу</button>
+          <p class="form-note" id="reviewNote" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section reveal public-section" id="contacts">
+      <div class="section-heading">
+        <p class="eyebrow">Байланыс</p>
+        <h2>Azamat Print-пен байланысу</h2>
+        <p>Батырмалар реті: Инстаграм, Уатсап, Телеграм, Телефон, 2GIS.</p>
+      </div>
+      <div class="contact-panel">
+        <div class="contact-buttons" id="contactButtons">
+          <a class="btn primary" href="https://www.instagram.com/azamat_print?igsh=MWRsajAweTRxYTV0Zw==" target="_blank" rel="noreferrer">Инстаграм</a>
+          <a class="btn primary" href="https://wa.me/77714782675" target="_blank" rel="noreferrer">Уатсап</a>
+          <a class="btn primary" href="https://t.me/azamatprint" target="_blank" rel="noreferrer">Телеграм</a>
+          <a class="btn primary" href="tel:77714782675">Телефон</a>
+          <a class="btn primary" href="https://2gis.kz/kyzylorda/geo/70000001079913668" target="_blank" rel="noreferrer">2GIS</a>
+        </div>
+        <div class="contact-details" id="contactDetails">
+          <div class="contact-line"><strong>Инстаграм:</strong><br>https://www.instagram.com/azamat_print?igsh=MWRsajAweTRxYTV0Zw==</div>
+          <div class="contact-line"><strong>Уатсап:</strong><br>+7 771 478 2675</div>
+          <div class="contact-line"><strong>Телеграм:</strong><br>@azamatprint</div>
+          <div class="contact-line"><strong>Телефон:</strong><br>+7 771 478 2675</div>
+          <div class="contact-line"><strong>2GIS:</strong><br>https://2gis.kz/kyzylorda/geo/70000001079913668</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band reveal page-screen auth-screen hidden" id="login">
+      <div class="screen-top">
+        <a class="btn small" href="#home">← Басты бетке қайту</a>
+      </div>
+      <div class="section-heading">
+        <p class="eyebrow">Жеке терезе</p>
+        <h2>Қызметкерге кіру</h2>
+        <p>Кіру тек қызметкерлер мен әкімшілерге арналған. Клиенттік кабинет, тіркелу, себет және онлайн төлем жоқ.</p>
+      </div>
+      <div class="login-layout">
+        <form class="login-form" id="loginForm" autocomplete="off">
+          <label>
+            <span>Логин</span>
+            <input name="username" autocomplete="off" required placeholder="Логин">
+          </label>
+          <label>
+            <span>Құпиясөз</span>
+            <input name="password" type="password" autocomplete="new-password" required placeholder="Құпиясөз">
+          </label>
+          <button class="btn primary" type="submit">Кіру</button>
+          <p class="form-note error" id="loginError" role="alert"></p>
+        </form>
+        <div class="guard-card">
+          <h3>Қорғалған мүмкіндіктер</h3>
+          <ul>
+            <li>бағаны кодқа тимей өзгерту;</li>
+            <li>қызметті уақытша жасыру;</li>
+            <li>жеңілдік пен «Танымал» белгісін басқару;</li>
+            <li>әкімші үшін қызметкер, пікір және контакт басқару.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard section page-screen hidden" id="dashboard" aria-live="polite">
+      <div class="screen-top">
+        <a class="btn small" href="#home">← Сайтқа қайту</a>
+      </div>
+      <div class="dashboard-head">
+        <div>
+          <p class="eyebrow" id="dashboardRole">Қызметкер панелі</p>
+          <h2>Тауарлар мен прайс деректерін басқару</h2>
+          <p class="muted">Бұл жеке жұмыс терезесінде енгізілген деректерді өзгертуге және жаңа қызмет қосуға болады.</p>
+        </div>
+        <button class="btn" id="logoutButton" type="button">Шығу</button>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Панель бөлімдері">
+        <button class="tab active" data-tab="manageServices" type="button">Прайс базасы</button>
+        <button class="tab" data-tab="manageReviews" type="button">Пікірлер</button>
+        <button class="tab admin-only" data-tab="manageContacts" type="button">Байланыс деректері</button>
+        <button class="tab admin-only" data-tab="manageStaff" type="button">Қызметкерлер</button>
+      </div>
+
+      <div class="tab-panel active" id="manageServices"></div>
+      <div class="tab-panel" id="manageReviews"></div>
+      <div class="tab-panel" id="manageContacts"></div>
+      <div class="tab-panel" id="manageStaff"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Azamat Print. Тазалық, ыңғайлылық, заманауи минимализм.</p>
+    <a href="#top">Жоғарыға қайту</a>
+  </footer>
+
+  <script src="app.js?v=20260614-4"></script>
+</body>
+</html>
